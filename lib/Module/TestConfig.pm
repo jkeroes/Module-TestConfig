@@ -1,8 +1,6 @@
 # -*- perl -*-
 #
 # Module::TestConfig - asks questions and autowrite a module
-#
-# $Id: TestConfig.pm,v 1.33 2003/08/29 18:40:16 jkeroes Exp $
 
 package Module::TestConfig;
 
@@ -861,11 +859,11 @@ bug - especially if your names mimic existing environment variables.
 
 =head1 AUTHOR
 
-Joshua Keroes E<lt>jkeroes@eli.netE<gt>
+Joshua Keroes E<lt>joshua@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003 by Joshua Keroes E<lt>jkeroes@eli.netE<gt>
+Copyright 2003-2013 by Joshua Keroes E<lt>joshua@cpan.orgE<gt>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
