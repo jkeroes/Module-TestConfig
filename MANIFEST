@@ -1,11 +1,13 @@
-.cvsignore
+.travis.yml
 Changes
-MANIFEST			This list of files
-MANIFEST.SKIP
-Makefile.PL
-README
 lib/Module/TestConfig.pm
 lib/Module/TestConfig/Question.pm
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.yml
+MYMETA.json
+MYMETA.yml
+README
 t/00_init.t
 t/05_question.t
 t/10_basic.t
@@ -15,4 +17,3 @@ t/40_defaults.t
 t/50_save.t
 t/60_validate.t
 t/etc/defaults.config
-META.yml                                 Module meta-data (added by MakeMaker)

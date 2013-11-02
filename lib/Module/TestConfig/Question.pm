@@ -1,8 +1,6 @@
 # -*- perl -*-
 #
 # Module::TestConfig::Question - question interface
-#
-# $Id: Question.pm,v 1.7 2003/08/28 21:02:14 jkeroes Exp $
 
 package Module::TestConfig::Question;
 
@@ -26,20 +24,20 @@ sub init {
     my $self = shift;
 
     if ( ref $_[0] eq "ARRAY" ) {
-	my @q = @{+shift};
-	$self->msg(  shift @q ) if @q;
-	$self->name( shift @q ) if @q;
-	$self->def(  shift @q ) if @q;
-	$self->opts( shift @q ) if @q;
+        my @q = @{+shift};
+        $self->msg(  shift @q ) if @q;
+        $self->name( shift @q ) if @q;
+        $self->def(  shift @q ) if @q;
+        $self->opts( shift @q ) if @q;
     } else {
-	my %args = ref $_[0] eq "HASH" ? %{$_[0]} : @_;
-	while ( my ( $method, $args ) = each %args ) {
-	    if ( $self->can( $method ) ) {
-		$self->$method( $args );
-	    } else {
-		croak "Can't handle arg: '$method'. Aborting";
-	    }
-	}
+        my %args = ref $_[0] eq "HASH" ? %{$_[0]} : @_;
+        while ( my ( $method, $args ) = each %args ) {
+            if ( $self->can( $method ) ) {
+                $self->$method( $args );
+            } else {
+                croak "Can't handle arg: '$method'. Aborting";
+            }
+        }
     }
 
     return $self;
@@ -67,26 +65,26 @@ sub opts {
     my $self = shift;
 
     if ( @_ ) {
-	my %args = ref $_[0] eq "HASH" ? %{ $_[0] } : @_;
+        my %args = ref $_[0] eq "HASH" ? %{ $_[0] } : @_;
 
-	while ( my ( $method, $args ) = each %args ) {
-	    if ( $self->can( $method ) ) {
-		$self->$method( $args );
-	    } else {
-		croak "Can't handle opts arg: '$method'. Aborting";
-	    }
-	}
+        while ( my ( $method, $args ) = each %args ) {
+            if ( $self->can( $method ) ) {
+                $self->$method( $args );
+            } else {
+                croak "Can't handle opts arg: '$method'. Aborting";
+            }
+        }
     }
 
     return wantarray
-	? ( skip     => $self->{skip},
-	    validate => $self->{validate},
-	    noecho   => $self->{noecho},
-	  )
-	: { skip     => $self->{skip},
-	    validate => $self->{validate},
-	    noecho   => $self->{noecho},
-	};
+    ? ( skip     => $self->{skip},
+        validate => $self->{validate},
+        noecho   => $self->{noecho},
+      )
+    : { skip     => $self->{skip},
+        validate => $self->{validate},
+        noecho   => $self->{noecho},
+    };
 }
 
 sub skip {
@@ -123,14 +121,14 @@ Module::TestConfig::Question - question interface
   use Module::TestConfig::Question;
 
   my $question = Module::TestConfig::Question->new(
-	name => 'toes',
-	msg => 'How many toes do you have?',
-	def => 10,
-	opts => {
-		 noecho   => 0,
-		 validate => { ... },
-		 skip     => sub { ... },
-		}
+    name => 'toes',
+    msg => 'How many toes do you have?',
+    def => 10,
+    opts => {
+         noecho   => 0,
+         validate => { ... },
+         skip     => sub { ... },
+        }
   );
 
 =head1 PUBLIC METHODS
@@ -213,11 +211,11 @@ Returns: the current value
 
 =head1 AUTHOR
 
-Joshua Keroes E<lt>jkeroes@eli.netE<gt>
+Joshua Keroes E<lt>joshua@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003 by Joshua Keroes E<lt>jkeroes@eli.netE<gt>
+Copyright 2003-2013 by Joshua Keroes E<lt>joshua@cpan.orgE<gt>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
