@@ -1,6 +1,6 @@
 # -*- perl -*-
 
-use Test::More tests => 28;
+use Test::More tests => 27;
 #use Test::More 'no_plan';
 
 use Test::Warn;
@@ -61,7 +61,7 @@ warnings_like
     "save_defaults( sep => '=' )";
 
 ok -r 'test.conf',              "wrote new defaults file";
-ok -r 'test.conf.bak',              "old defaults file backed up";
+# ok -r 'test.conf.bak',              "old defaults file backed up"; # deleted in 0.06
 
 ok $conf = Config::Auto::parse('test.conf'),    "parse new defaults file";
 is $conf->{one}, 1,             "answer(1) from test.conf";
