@@ -21,7 +21,7 @@ use Module::TestConfig::Question;
 #   Term::ReadKey;
 #   File::Path
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 #------------------------------------------------------------
 # Methods
