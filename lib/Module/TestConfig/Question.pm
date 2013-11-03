@@ -141,6 +141,10 @@ Args: See L<"SYNOPSIS">
 
 Returns: an object
 
+=item init()
+
+Args: accepts a list, arrayref, or hashref of arguments; see L<"SYNOPSIS">
+
 =item msg()
 
 =item question()
