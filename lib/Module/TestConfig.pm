@@ -1,6 +1,6 @@
 # -*- perl -*-
 #
-# Module::TestConfig - asks questions and autowrite a module
+# Module::TestConfig - asks questions to autowrite a config module
 
 package Module::TestConfig;
 
@@ -18,8 +18,6 @@ use Module::TestConfig::Question;
 #   Text::FormatTable;
 #   Term::ReadKey;
 #   File::Path
-
-our $VERSION = '0.06';
 
 #------------------------------------------------------------
 # Methods
@@ -72,12 +70,6 @@ sub verbose {
     my $self = shift;
     $self->{verbose} = shift if @_;
     $self->{verbose};
-}
-
-sub debug {
-    my $self = shift;
-    $self->{debug} = shift if @_;
-    $self->{debug};
 }
 
 sub file {
@@ -504,6 +496,10 @@ Args and defaults:
   questions => [ ... ],
 
 Returns: a new Module::TestConfig object.
+
+=item init()
+
+Sets object attributes.
 
 =item questions()
 
